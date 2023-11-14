@@ -6,7 +6,7 @@ class ObjectRenderer:
         self.game = game
         self.screen = game.screen
         self.wall_textures = self.load_wall_textures()
-        self.sky = self.get_texture('../assets/3.png', (WIDTH, HALF_HEIGHT))
+        self.sky = self.get_texture('../textures/3.png', (WIDTH, HALF_HEIGHT))
         self.sky_offset = 0
 
 
@@ -41,12 +41,12 @@ class ObjectRenderer:
 
     def load_wall_textures(self):
         return {
-            1: self.get_texture('../assets/1.png'),
-            2: self.get_texture('../assets/2.jpg'),
-            3: self.get_texture('../assets/3.png'),
-            4: self.get_texture('../assets/4.png'),
-            5: self.get_texture('../assets/5.png'),
-            6: self.get_texture('../assets/6.png'),
-            7: self.get_texture('../assets/7.png'),
-            8: self.get_texture('../assets/8.png'),
+            1: self.get_texture('../textures/1.png'),
+            2: self.get_texture('../textures/2.jpg'),
+            3: self.get_texture('../textures/3.png'),
+            4: self.get_texture('../textures/4.png'),
+            5: self.get_texture('../textures/5.png'),
+            6: self.get_texture('../textures/6.png'),
+            7: self.get_texture('../textures/7.png'),
+            8: self.get_texture('../textures/8.png'),
         }

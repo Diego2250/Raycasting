@@ -12,13 +12,22 @@ class Game:
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
         self.clock = pg.time.Clock()
         self.delta_time = 1
+        pg.mixer.music.load('../sounds/soundtrack.mp3')
         self.new_game()
 
+    def play_music(self):
+        pg.mixer.music.play()
+
+    def stop_music(self):
+        pg.mixer.music.stop()
+
     def new_game(self):
+        self.play_music()
         self.map = Map(self)
         self.player = Player(self)
         self.object_renderer = ObjectRenderer(self)
         self.raycasting = Raycasting(self)
+
 
     def update(self):
         self.player.update()
