@@ -5,6 +5,8 @@ import math
 
 class Player:
     def __init__(self, game):
+        self.angular_velocity = 0.0
+        self.rel = 0
         self.game = game
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
@@ -39,6 +41,9 @@ class Player:
             self.angle += PLAYER_ROTATION_SPEED * self.game.delta_time
         self.angle %= math.tau
 
+
+
+
     def check_wall(self, x, y):
         return (x, y) not in self.game.map.world_map
 
@@ -55,8 +60,18 @@ class Player:
         #             self.y * 100 + WIDTH * math.sin(self.angle)), 2)
         pg.draw.circle(self.game.screen, 'blue', (int(self.x * 100), int(self.y * 100)), 12)
 
+    def calculate_angular_velocity(self):
+        keys = pg.key.get_pressed()
+        if keys[pg.K_LEFT]:
+            self.angular_velocity = -PLAYER_ROTATION_SPEED * self.game.delta_time
+        elif keys[pg.K_RIGHT]:
+            self.angular_velocity = PLAYER_ROTATION_SPEED * self.game.delta_time
+        else:
+            self.angular_velocity = 0.0
+
     def update(self):
         self.movement()
+        self.calculate_angular_velocity()
 
     @property
     def pos(self):

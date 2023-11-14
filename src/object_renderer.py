@@ -6,14 +6,32 @@ class ObjectRenderer:
         self.game = game
         self.screen = game.screen
         self.wall_textures = self.load_wall_textures()
+        self.sky = self.get_texture('../assets/3.png', (WIDTH, HALF_HEIGHT))
+        self.sky_offset = 0
+
 
     def draw(self):
+        self.draw_sky()
         self.render_game_objects()
+
+    def draw_sky(self):
+        # Calcular el offset con respecto al movimiento del jugador
+        self.sky_offset = (self.sky_offset + 80.0 * self.game.player.angular_velocity) % WIDTH
+
+        # SKY
+        self.screen.blit(self.sky, (-self.sky_offset, 0))
+        self.screen.blit(self.sky, (-self.sky_offset + WIDTH, 0))
+
+        pg.draw.rect(self.screen, FLOOR_COLOR, (0, HALF_HEIGHT, WIDTH, HEIGHT))
+
+
 
     def render_game_objects(self):
         list_objects = self.game.raycasting.objects_to_render
         for depth, image, pos in list_objects:
             self.screen.blit(image, pos)
+
+
 
     # metodo estatico para cargar texturas
     @staticmethod

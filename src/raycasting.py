@@ -7,13 +7,15 @@ class Raycasting:
         # contructor
         self.game = game
         self.rc_result = []
-        self.objects_to_render = []
+        self.objects_to_render = [] # [(depth, wall_column, wall_pos), ...]
         self.textures = self.game.object_renderer.wall_textures
 
     def get_objects_render(self):
         self.objects_to_render.clear()
         for ray, values in enumerate(self.rc_result):
             depth, p_height, texture, offset = values
+            # If que comprueba si la pared es mas alta que la pantalla. Si es mas alta, se recorta, si no, se pinta entera
+            # Esto para evitar caidas de fps
             if p_height < HEIGHT:
                 wall_column = self.textures[texture].subsurface(
                     offset * (TEXTURE_SIZE - SCALE), 0, SCALE, TEXTURE_SIZE
@@ -101,6 +103,9 @@ class Raycasting:
             #Pintar las paredes
             #c = [255 / (1 + depth ** 5 * 0.00002)] * 3
             #pg.draw.rect(self.game.screen, c, (ray * SCALE, HALF_HEIGHT - p_height // 2, SCALE, p_height))
+
+            #pg.draw.line(self.game.screen, 'yellow', (100 * ox, 100 * oy),
+            #             (100 * ox + 100 * depth * cos_a, 100 * oy + 100 * depth * sin_a), 2)
 
             #Pintar las texturas
             self.rc_result.append((depth, p_height, texture, offset))
