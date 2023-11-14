@@ -34,9 +34,9 @@ class Player:
         self.check_wall_collision(dx, dy)
 
         if keys[pg.K_LEFT]:
-            self.angle -= PLAYER_ROT_SPEED * self.game.delta_time
+            self.angle -= PLAYER_ROTATION_SPEED * self.game.delta_time
         if keys[pg.K_RIGHT]:
-            self.angle += PLAYER_ROT_SPEED * self.game.delta_time
+            self.angle += PLAYER_ROTATION_SPEED * self.game.delta_time
         self.angle %= math.tau
 
     def check_wall(self, x, y):
