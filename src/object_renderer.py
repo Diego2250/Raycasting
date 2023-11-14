@@ -30,4 +30,5 @@ class ObjectRenderer:
             5: self.get_texture('../assets/5.png'),
             6: self.get_texture('../assets/6.png'),
             7: self.get_texture('../assets/7.png'),
+            8: self.get_texture('../assets/8.png'),
         }
