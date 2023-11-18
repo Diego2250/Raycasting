@@ -13,6 +13,7 @@ class Game:
         self.clock = pg.time.Clock()
         self.delta_time = 1
         pg.mixer.music.load('../sounds/soundtrack.mp3')
+        pg.mixer.music.set_volume(0.7)
         self.new_game()
 
     def play_music(self):

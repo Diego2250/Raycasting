@@ -10,6 +10,8 @@ class Player:
         self.game = game
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
+        self.footstep_sound = pg.mixer.Sound('../sounds/footsteps.wav')
+        self.last_footstep_time = 0
 
     def movement(self):
         sin_a = math.sin(self.angle)
@@ -19,19 +21,32 @@ class Player:
         speed_sin = speed * sin_a
         speed_cos = speed * cos_a
 
+        time_now = pg.time.get_ticks()
         keys = pg.key.get_pressed()
         if keys[pg.K_w]:
             dx += speed_cos
             dy += speed_sin
+            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+                self.footstep_sound.play()
+                self.last_footstep_time = time_now
         if keys[pg.K_s]:
             dx -= speed_cos
             dy -= speed_sin
+            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+                self.footstep_sound.play()
+                self.last_footstep_time = time_now
         if keys[pg.K_a]:
             dx += speed_sin
             dy -= speed_cos
+            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+                self.footstep_sound.play()
+                self.last_footstep_time = time_now
         if keys[pg.K_d]:
             dx -= speed_sin
             dy += speed_cos
+            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+                self.footstep_sound.play()
+                self.last_footstep_time = time_now
 
         self.check_wall_collision(dx, dy)
 
