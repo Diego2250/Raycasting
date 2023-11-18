@@ -25,7 +25,7 @@ class Game:
 
 
     def play_music(self):
-        pg.mixer.music.play()
+        pg.mixer.music.play(-1)
 
     def stop_music(self):
         pg.mixer.music.stop()
