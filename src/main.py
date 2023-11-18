@@ -13,10 +13,10 @@ class Game:
         self.clock = pg.time.Clock()
         self.delta_time = 1
         pg.mixer.music.load('../sounds/soundtrack.mp3')
+        self.attack_sound = pg.mixer.Sound('../sounds/punch.wav')
         pg.mixer.music.set_volume(0.7)
         self.hand_sprite = pg.image.load('../sprites/doomHand.png')
         self.attack_sprite = pg.image.load('../sprites/handAttack.png')
-        ## hacer mas grande la mano
         self.hand_sprite = pg.transform.scale(self.hand_sprite, (self.hand_sprite.get_width() * 2, self.hand_sprite.get_height() * 2))
         self.current_hand_sprite = self.hand_sprite
         self.attack_sprite = pg.transform.scale(self.attack_sprite, (self.attack_sprite.get_width() * 2, self.attack_sprite.get_height() * 2))
@@ -68,6 +68,7 @@ class Game:
                 if self.current_hand_sprite == self.hand_sprite:
                     self.current_hand_sprite = self.attack_sprite
                     self.current_hand_sprite = self.attack_sprite
+                    self.attack_sound.play()
                     self.attack_time = pg.time.get_ticks()
                 else:
                     self.current_hand_sprite = self.hand_sprite

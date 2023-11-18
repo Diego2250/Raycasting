@@ -32,19 +32,19 @@ class Player:
         if keys[pg.K_s]:
             dx -= speed_cos
             dy -= speed_sin
-            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+            if time_now - self.last_footstep_time > 300:
                 self.footstep_sound.play()
                 self.last_footstep_time = time_now
         if keys[pg.K_a]:
             dx += speed_sin
             dy -= speed_cos
-            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+            if time_now - self.last_footstep_time > 300:
                 self.footstep_sound.play()
                 self.last_footstep_time = time_now
         if keys[pg.K_d]:
             dx -= speed_sin
             dy += speed_cos
-            if time_now - self.last_footstep_time > 300:  # Ajusta la demora según tus preferencias
+            if time_now - self.last_footstep_time > 300:
                 self.footstep_sound.play()
                 self.last_footstep_time = time_now
 
