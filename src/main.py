@@ -14,7 +14,7 @@ class Game:
         self.delta_time = 1
         pg.mixer.music.load('../sounds/soundtrack.mp3')
         self.attack_sound = pg.mixer.Sound('../sounds/punch.wav')
-        pg.mixer.music.set_volume(0.7)
+        pg.mixer.music.set_volume(0.5)
         self.hand_sprite = pg.image.load('../sprites/doomHand.png')
         self.attack_sprite = pg.image.load('../sprites/handAttack.png')
         self.hand_sprite = pg.transform.scale(self.hand_sprite, (self.hand_sprite.get_width() * 2, self.hand_sprite.get_height() * 2))
