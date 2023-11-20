@@ -38,7 +38,7 @@ python main.py
 - Música de fondo
 
 ## 🎦 Video
-https://github.com/Diego2250/Raycasting/assets/77738746/7e401b85-060f-4890-8736-97d8f810d881
+https://github.com/Diego2250/Raycasting/assets/77738746/7d4bd306-d94e-45bb-b963-27152b097481
 
 ## 💯 Rúbrica
 - [](0 a 50 puntos) [Criterio subjetivo] Por implementar el proyecto en algún hardware distinto a una computadora tradicional
