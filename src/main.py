@@ -21,7 +21,16 @@ class Game:
         self.current_hand_sprite = self.hand_sprite
         self.attack_sprite = pg.transform.scale(self.attack_sprite, (self.attack_sprite.get_width() * 2, self.attack_sprite.get_height() * 2))
         self.attack_time = 0
+        self.minimap_scale = 8
         self.new_game()
+
+    def draw_minimap(self):
+        for (x, y), value in self.map.world_map.items():
+            rect = pg.Rect(x * self.minimap_scale, y * self.minimap_scale, self.minimap_scale, self.minimap_scale)
+            if value:  # Si la celda es una pared
+                pg.draw.rect(self.screen, 'white', rect)
+        player_rect = pg.Rect(self.player.x * self.minimap_scale, self.player.y * self.minimap_scale, self.minimap_scale, self.minimap_scale)
+        pg.draw.ellipse(self.screen, 'blue', player_rect)
 
 
     def play_music(self):
@@ -54,6 +63,7 @@ class Game:
         self.object_renderer.draw()
         #self.map.draw()
         #self.player.draw()
+        self.draw_minimap()
         hand_x = WIDTH / 2 - self.current_hand_sprite .get_width() / 2
         hand_y = HEIGHT - self.current_hand_sprite.get_height()
         self.screen.blit(self.current_hand_sprite, (hand_x, hand_y))
@@ -75,6 +85,7 @@ class Game:
 
     def run(self):
         while True:
+            self.draw_minimap()
             self.check_events()
             self.draw()
             self.update()
