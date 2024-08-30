@@ -1,57 +1,42 @@
+
 # :rage1: Raycasting Game
 
-Este proyecto es un simple juego de raycasting en 3D, inspirado en los primeros juegos de disparos en primera persona. Utiliza la técnica de raycasting para simular un entorno 3D en una pantalla 2D. Esta hecho en Python con el uso de la libreria Pygame
+This project is a simple 3D raycasting game, inspired by early first-person shooters. It uses the raycasting technique to simulate a 3D environment on a 2D screen. It is made in Python using the Pygame library.
 
-## ⬇️ Instalación
+## ⬇️ Installation
 
-Asegúrate de tener instalado Python y Pygame en tu sistema. Puedes instalar Pygame utilizando el siguiente comando:
+Make sure you have Python and Pygame installed on your system. You can install Pygame using the following command:
 
 ```bash
 pip install pygame
 ```
 
-## ⏯️ Ejecución
+## ⏯️ Running the Game
 
-Ejecuta el juego utilizando el siguiente comando:
+Run the game using the following command:
 
 ```bash
 python main.py
 ```
 
-## 🎮 Controles
+## 🎮 Controls
 
-- **W**: Mover hacia adelante
-- **S**: Mover hacia atrás
-- **A**: Girar a la izquierda
-- **D**: Girar a la derecha
-- **Flecha izquierda**: Girar a la izquierda
-- **Flecha derecha**: Girar a la derecha
-- **Esc**: Salir del juego
-- **Espacio**: Golpear
+- **W**: Move forward
+- **S**: Move backward
+- **A**: Turn left
+- **D**: Turn right
+- **Left Arrow**: Turn left
+- **Right Arrow**: Turn right
+- **Esc**: Exit the game
+- **Space**: Hit
 
-## 📝 Características
+## 📝 Features
 
-- Juego de raycasting en 3D
-- Movimiento del jugador
-- Paredes y texturas
-- Efectos de sonido
-- Música de fondo
+- 3D raycasting game
+- Player movement
+- Walls and textures
+- Sound effects
+- Background music
 
 ## 🎦 Video
 https://github.com/Diego2250/Raycasting/assets/77738746/7d4bd306-d94e-45bb-b963-27152b097481
-
-## 💯 Rúbrica
-- [](0 a 50 puntos) [Criterio subjetivo] Por implementar el proyecto en algún hardware distinto a una computadora tradicional
-  - Si agregan soporte para control, tienen 20
-- [x](0 a 30 puntos) [Criterio subjetivo] Según la estética de su nivel
-- [x](15 puntos) por mantener al rededor de 15 fps (los fps se deben desplegar)
-- [x](20 puntos) Por implementar una cámara con movimiento hacia delante y hacia atrás y rotación
-  - []10 puntos más por implementar rotación con el mouse (solo horizontal)
-- [x](10 puntos) Por implementar un minimapa que muestre la posición de jugador en el mundo. No puede estar lado a lado del mapa principal, debe estar en una esquina. 
-- [x](5 puntos) Por agregar música de fondo.
-- [x](10 puntos) Por agregar efectos de sonido
-- [x](20 puntos) Por agregar al menos 1 animación a alguna sprite en la pantalla
-- [](5 puntos) Por agregar una pantalla de bienvenida 
-  - [](10 puntos mas) si la pantalla permite seleccionar entre multiples niveles 
-- [](10 puntos) Por agregar una pantalla de exito cuando se cumpla una condicion en el nivel
-
