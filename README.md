@@ -13,6 +13,12 @@ pip install pygame
 
 ## ⏯️ Running the Game
 
+Clone the repository:
+   ```bash
+   git clone https://github.com/Diego2250/Raycasting.git
+   cd Raycasting
+   ```
+   
 Run the game using the following command:
 
 ```bash
